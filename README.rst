@@ -28,7 +28,7 @@ to have all tests pass include a running `MongoDB`_ instance listening on::
 
     mongodb://localhost:27017/
 
-Databases, of the form ``'flask_security_test_<timestamp>`` will be created
+Databases, of the form ``'flask_security_test_<timestamp>``, will be created
 and torn down by the test infrastructure.
 
 Python dependencies can be installed into an activated virtualenv::
