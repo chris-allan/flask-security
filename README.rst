@@ -35,7 +35,7 @@ Python dependencies can be installed into an activated virtualenv::
 
     pip install -r requirements.txt -r requirements-dev.txt -e .
 
-`pytest` is used to run the tests::
+`pytest`_ is used to run the tests::
 
     py.test --cov flask_security --cov-report term-missing tests/
 
