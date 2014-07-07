@@ -22,6 +22,10 @@ from flask_security import Security, MongoEngineUserDatastore, SQLAlchemyUserDat
 from utils import populate_data, Response
 
 
+# Enable a base set of plugins:
+#  * http://pytest.org/latest/plugins.html
+pytest_plugins = "pep8", "flakes"
+
 @pytest.fixture()
 def app(request):
     app = Flask(__name__)
