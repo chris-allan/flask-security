@@ -23,29 +23,29 @@ Flask-Security quickly adds security features to your Flask application.
 Running tests
 -------------
 
-The tests are located under the `test` directory. To run the tests, you will
+The tests are located under the ``test`` directory. To run the tests, you will
 need to activate your virtualenv and install the required dependencies::
 
-	pip install -r requirements.txt -r requirements-dev.txt -e .
+    pip install -r requirements.txt -r requirements-dev.txt -e .
 
 Unit tests
 ^^^^^^^^^^
 
-Unit tests are stored under the `tests/unit/` folder and can be run by calling
+Unit tests are stored under the ``tests/unit/`` folder and can be run by calling
 the following after activating your `virtualenv`::
 
-	py.test --cov flask_security --cov-report term-missing tests/unit/
+    py.test --cov flask_security --cov-report term-missing tests/unit/
 
 Integration tests
 ^^^^^^^^^^^^^^^^^
 
-Integration tests are stored under `tests/integration` and depend on the
+Integration tests are stored under ``tests/integration`` and depend on the
 initialization of one or more integration testing environments. They
 can be run by calling::
 
-	py.test tests/integration/<environment>/
+    py.test tests/integration/<environment>/
 
-Each environment will have a corresponding `README.rst` outlining its
+Each environment will have a corresponding ``README.rst`` outlining its
 requirements.
 
 Resources
