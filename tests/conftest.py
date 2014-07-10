@@ -26,6 +26,14 @@ from utils import populate_data, Response
 #  * http://pytest.org/latest/plugins.html
 pytest_plugins = "pep8", "flakes"
 
+# Add command line options to pytest:
+#  * http://pytest.org/latest/example/simple.html
+def pytest_addoption(parser):
+    parser.addoption(
+        "--mongodb_uri", action="store", default="mongodb://localhost:27017/%(db_name)s",
+        help="MongoDB database URI. `%%(db_name)s` will be provided by "
+            "fixtures. (default: %(default)s)"
+    )
 
 @pytest.fixture()
 def app(request):
@@ -119,11 +127,11 @@ def app(request):
 def mongoengine_datastore(request, app):
     from flask_mongoengine import MongoEngine
 
+    db_uri = request.config.getoption("--mongodb_uri")
     db_name = 'flask_security_test_%s' % str(time.time()).replace('.', '_')
     app.config['MONGODB_SETTINGS'] = {
-        'db': db_name,
-        'host': 'localhost',
-        'port': 27017,
+        'db': True,
+        'host': db_uri % {'db_name': db_name},
         'alias': db_name
     }
 
