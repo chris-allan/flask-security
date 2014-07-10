@@ -24,9 +24,9 @@ Running tests
 -------------
 
 The tests are located under the ``tests`` directory. Additional dependencies
-to have all tests pass include a running `MongoDB`_ instance listening on::
-
-    mongodb://localhost:27017/
+to have all tests pass include a running `MongoDB`_ instance. The MongoDB
+database URI can be configured with the ``--mongodb_uri`` argument to
+``py.test``.
 
 Databases, of the form ``'flask_security_test_<timestamp>``, will be created
 and torn down by the test infrastructure.
@@ -38,6 +38,12 @@ Python dependencies can be installed into an activated virtualenv::
 `pytest`_ is used to run the tests::
 
     py.test --cov flask_security --cov-report term-missing tests/
+
+Various custom options have been added to aid test configurability. An
+exhaustive list of these options can be found in the ``custom options``
+section of the ``py.test`` help::
+
+    py.test --help
 
 Resources
 ---------
